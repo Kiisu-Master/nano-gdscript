@@ -65,14 +65,17 @@ color green "(\$|%)"[_/a-zA-Z0-9][_/ a-zA-Z0-9]+?""
 color green "(\$|%)[_/a-zA-Z0-9][_/a-zA-Z0-9]+?"
 
 # Comments.
-color lightblack "^#.*"
+color lightblack "^\s*#.*"
 # Inline comments.
 color lightblack "\s\s#\s.*"
 
 # Docstrings.
-color white "^##.*"
+color white "^\s*##.*"
 # Inline docstrings.
 color white "\s\s##\s.*"
+
+# Whitespace.
+color bold,lightblack "[[:space:]]"
 
 # Misc.
 ## Task Markers.
