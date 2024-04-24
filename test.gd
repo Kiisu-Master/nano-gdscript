@@ -18,20 +18,20 @@ const TEST_CONSTANT := Color()  # Constructor / Inline comment.
 
 var test_var_node := $Child/Child  ## Inline docstring.
 
-@onready var test_onready_var
+@onready var test_onready_var = $"Node path with spaces"
 
 static var test_static_var: Vector2i
 
 
 func _ready() -> void:
 	test_function("Hello world!")
-
+	# Test comment.
 	var number := TestNode.test_function(
 		"This is a test string.\n \" \' This will be highlighted as part of the string."
 	)
 
 	match number:
-		TestEnum.CASE_ONE when true:
+		TestEnum.CASE_ONE when true:  # Note: the 'when' will currently crash gdformat and gdlint.
 			continue
 		_:
 			return
